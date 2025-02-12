@@ -2,6 +2,12 @@
 set -e
 
 apt-get update && \
+        apt-get install -y apt-transport-https ca-certificates
+
+echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-9 main" | sudo tee -a /etc/apt/sources.list && \
+        apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 15CF4D18AF4F7421 && \
+
+apt-get update && \
     apt-get install -y make build-essential clang-9 git wget
 
 update-alternatives \
