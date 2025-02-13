@@ -1,9 +1,6 @@
 #!/bin/bash
 set -ex
 
-apt-get update &&\
-	apt-get install cmake -y
-
 ##
 # Pre-requirements:
 # - env FUZZER: path to fuzzer work dir

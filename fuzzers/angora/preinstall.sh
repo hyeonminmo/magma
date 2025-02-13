@@ -3,7 +3,7 @@ set -e
 
 apt-get update && \
     apt-get install -y make build-essential git \
-    python-pip python-dev wget zlib1g-dev
+    python-pip python-dev wget zlib1g-dev apt-transport-https ca-certificates
 
 # Remove old Go and install Go 1.17+
 wget https://go.dev/dl/go1.17.13.linux-amd64.tar.gz && \
