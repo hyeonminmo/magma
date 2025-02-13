@@ -1,6 +1,9 @@
 #!/bin/bash
 set -ex
 
+apt-get update &&\
+	apt-get install cmake -y
+
 ##
 # Pre-requirements:
 # - env FUZZER: path to fuzzer work dir
@@ -21,7 +24,7 @@ export PATH="$CARGO_HOME/bin:$PATH"
 
 # Install LLVM
 mkdir -p "$FUZZER/repo/llvm_install"
-LINUX_VER="ubuntu-18.04" LLVM_VER="7.0.1" PREFIX="$FUZZER/repo/llvm_install" ./build/install_llvm.sh
+LINUX_VER="ubuntu-16.04" LLVM_VER="7.0.1" PREFIX="$FUZZER/repo/llvm_install" ./build/install_llvm.sh
 
 # Build Angora
 export PATH="$FUZZER/repo/llvm_install/clang+llvm/bin:$PATH"
