@@ -2,8 +2,14 @@
 set -e
 
 apt-get update && \
+        apt-get install -y apt-transport-https ca-certificates
+
+echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-9 main" | sudo tee -a /etc/apt/sources.list && \
+        apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 15CF4D18AF4F7421 && \
+
+apt-get update && \
     apt-get install -y make clang-9 llvm-9-dev libc++-9-dev libc++abi-9-dev \
-        build-essential git wget gcc-7-plugin-dev
+        build-essential git wget gcc-5-plugin-dev
 
 update-alternatives \
   --install /usr/lib/llvm              llvm             /usr/lib/llvm-9  20 \
