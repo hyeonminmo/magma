@@ -10,6 +10,15 @@ set -e
 # - env CFLAGS and CXXFLAGS must be set to link against Magma instrumentation
 ##
 
+export CFLAGS="$CFLAGS -fprofile-arcs -ftest-coverage"
+export CXXFLAGS="$CXXFLAGS -fprofile-arcs -ftest-coverage"
+export LDFLAGS="$LDFLAGS --coverage"
+
+export CC="/usr/bin/gcc"
+export CXX="/usr/bin/g++"
+
+
+
 export LIBS="$LIBS -l:afl_driver.o -lstdc++"
 
 "$MAGMA/build.sh"

@@ -7,5 +7,5 @@ set -e
 ##
 
 # compile afl_driver.cpp
-g++ $CXXFLAGS -std=c++11 -c "$FUZZER/src/afl_driver.cpp" -fPIC \
+g++ $CXXFLAGS -c "$FUZZER/src/afl_driver.cpp" -fPIC \
     -o "$OUT/afl_driver.o"
