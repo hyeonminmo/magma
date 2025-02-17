@@ -15,7 +15,7 @@ ENV MAGMA_R /magma
 ENV OUT		/magma_out
 ENV SHARED 	/magma_shared
 
-ENV CC  /usr/bin/gcc
+ENV CC /usr/bin/gcc 
 ENV CXX /usr/bin/g++
 ENV LD /usr/bin/ld
 ENV AR /usr/bin/ar
